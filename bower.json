@@ -1,0 +1,34 @@
+{
+  "name": "leaflet-control-box",
+  "version": "0.0.0",
+  "homepage": "https://github.com/NielsHolt/leaflet-control-box",
+  "authors": [
+    "Niels Holt <niels@steenbuchholt.dk>"
+  ],
+  "description": "Create Leaflet Control in a box with optional icons and size-toggle",
+  "main": [
+    "dist/leaflet-control-box.min.js",
+    "dist/leaflet-control-box.min.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/NielsHolt/leaflet-control-box.git"
+  },
+  "dependencies": {
+    "leaflet": "latest"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "devDependencies": {
+    "bourbon": "~4.2.4"
+  }
+}
