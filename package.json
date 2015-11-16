@@ -1,33 +1,37 @@
 {
-  "name": "leaflet-control-box",
-  "version": "0.0.1",
+  "name": "jquery-time-slider",
+  "version": "1.0.0",
   "description": "package.json is only use for building the package. see bower.json for more info",
-  "main": "dist/leaflet-control-box.min.js",
+  "author": "Niels Holt nho@fcoo.dk",
+  "license": "MIT",
   "devDependencies": {
-    "bourbon": "latest",
-    "modernizr-mixin": "latest",
-    "mathsass": "latest",
-    "jshint": "latest",
-    "uglifyjs": "latest"
+    "grunt-bower-concat": "latest",
+    "grunt-continue": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-rename": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-exec": "latest",
+    "grunt-jsonmin": "latest",
+    "grunt-prompt": "latest",
+    "grunt-sass": "latest",
+    "grunt-text-replace": "latest",
+    "load-grunt-tasks": "latest",
+    "main-bower-files": "latest",
+    "semver": "latest",
+    "shelljs": "^0.5.3",
+    "strip-json-comments": "latest",
+    "wordwrap": "^1.0.0"
   },
   "jshintConfig": {
-    "globals": {
-      "L": false,
-      "$": false,
-			"jQuery": false,
-      "console": false,
-      "DEBUG": false,
-			"document": false,
-			"alert"		: false
-    },
-    "undef": true,
-    "unused": true
+    "jshintrc": true
   },
-  "scripts": {
-    "lint": "jshint src/leaflet-control-box.js",
-    "build:css": "sass src/leaflet-control-box.scss dist/leaflet-control-box.min.css --style compressed",
-		"build:js": "uglifyjs src/leaflet-control-box.js -c -m -o dist/leaflet-control-box.min.js",
-    "build": "npm run build:css && npm run build:js",
-    "prebuild:js": "npm run lint"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FCOO/jquery-time-slider.git"
+  },
+  "homepage": "https://github.com/FCOO/jquery-time-slider"
 }
