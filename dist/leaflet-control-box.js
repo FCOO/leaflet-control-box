@@ -61,9 +61,10 @@ L.Control.Box = L.Control.extend({
 
 	addTo: function (map) {
 		L.Control.prototype.addTo.call(this, map);
-		if (this.options.defaultMinimized){
+		if (this.options.defaultMinimized)
 		  this.minimize();
-		}
+		else
+		  this.maximize();
 		return this;
 	},
 
