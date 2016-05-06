@@ -57,7 +57,8 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
 		//The icons	
 		&:before {
 			font-family: "leaflet-control-box";
-			font-size: rem(18px);
+			//font-size: rem(18px);
+			font-size: 18px;
 			color: black;
 			font-style: normal;
 			font-weight: normal;
@@ -68,7 +69,8 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
 			text-align: center;
 			font-variant: normal;
 			text-transform: none;
-			line-height: rem(19px);
+			//line-height: rem(19px);
+			line-height: 19px;
 		}
 
 
@@ -105,7 +107,8 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
 
 			height: 16px;
 			width	: 16px;
-			font-size:rem(19px);
+			//font-size:rem(19px);
+			font-size:19px;
 			text-align: left;
 			
 			&:before {
