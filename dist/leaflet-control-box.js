@@ -75,6 +75,13 @@ L.Control.Box = L.Control.extend({
 			this.maximize();
 	},
 
+	setDim: function( width, height ){
+		this.options.width = width || this.options.width;
+		this.options.height = height || this.options.height;
+		if (this._maximized)
+			this.maximize();
+	},
+	
 	minimize: function () {
 		this._container.style.width = '19px';
 		this._container.style.height = '19px';
@@ -86,7 +93,7 @@ L.Control.Box = L.Control.extend({
 			this.options.onMinimize( this );
 	},
 
-	maximize: function () {
+	maximize: function () { 
 		this._container.style.width = this.options.width + 'px';
 		this._container.style.height = this.options.height + 'px';
 		this._button.title = this.options.hideText;
