@@ -1,6 +1,6 @@
 {
   "name": "fcoo-leaflet",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "homepage": "https://github.com/FCOO/fcoo-leaflet",
   "author": "Niels Holt nho@fcoo.dk",
   "description": "package.json is only use for building the package. see bower.json for more info",

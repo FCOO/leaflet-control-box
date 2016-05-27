@@ -1,6 +1,6 @@
 {
   "name": "leaflet-control-box",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "homepage": "https://github.com/FCOO/leaflet-control-box",
   "authors": [
     "Niels Holt nho@fcoo.dk"
@@ -32,8 +32,5 @@
   ],
   "moduleType": [
     "es6"
-  ],
-  "resolutions": {
-    "leaflet": "1.0.0-rc.1"
-  }
+  ]
 }
