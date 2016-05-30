@@ -5,6 +5,8 @@
 ## Description
 Create Leaflet Control in a box with optional icons and size-toggle
 
+Also supports `position: "topcenter"` and `position: "bottomcenter"` ([fcoo/leatlet-control-topcenter](https://github.com/FCOO/leaflet-control-topcenter))
+
 ## Installation
 ### bower
 `bower install https://github.com/FCOO/leaflet-control-box.git --save`
@@ -18,75 +20,17 @@ http://FCOO.github.io/leaflet-control-box/demo/
 
 
 ### options
-<table>
-    <thead>
-        <tr>
-            <th>Option</th>
-            <th>Defaults</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>position</td>
-            <td></td>
-            <td>string</td>
-            <td>leaflet code for the position of the control</td>
-        </tr>
-        <tr>
-            <td>width</td>
-            <td></td>
-            <td>number</td>
-            <td>The width of the control
-		</td>
-        </tr>
-        <tr>
-            <td>height</td>
-            <td></td>
-            <td>number</td>
-            <td>The height of the control</td>
-        </tr>
-        <tr>
-            <td>icon</td>
-            <td>"plus"</td>
-            <td>string</td>
-            <td>The name of the icon shown when the control is closed/hidden.<br>Possible values:<code>plus</code>, <code>plus-box</code>, <code>minus</code>, <code>minus-box</code>, <code>zoom-in</code>, <code>zoom-out</code>, <code>map</code>, <code>clock</code>, <code>list</code>, <code>list2</code>, <code>menu</code>, <code>layers</code>, <code>settings</code></td>
-        </tr>
-        <tr>
-            <td>hideText</td>
-            <td>"Hide&nbsp;Box"</td>
-            <td>string</td>
-            <td>The title for the open/close-button when the control is minimized</td>
-        </tr>
-        <tr>
-            <td>showText</td>
-            <td>"Show&nbsp;Box"</td>
-            <td>string</td>
-            <td>The title for the open/close-button when the control is maximized</td>
-        </tr>
-
-
-        <tr>
-            <td>defaultMinimized</td>
-            <td>false</td>
-            <td>boolean</td>
-            <td>If true the control is closed/hidden on load</td>
-        </tr>
-        <tr>
-            <td>onMinimize</td>
-            <td>null</td>
-            <td>function</td>
-            <td>Called when the control is minimized</td>
-        </tr>
-        <tr>
-            <td>onMaximize</td>
-            <td>null</td>
-            <td>function</td>
-            <td>Called when the control is maximized</td>
-        </tr>
-    </tbody>
-</table>
+| Option | Type | Default | Description |
+| :--: | :--: | :-----: | --- |
+| position | string | `"topright"` | leaflet code for the position of the control.<br>Also supports `"topcenter"` and `"bottomcenter"` |
+| width | number | | The width of the control |
+| height | number  | | The height of the control |
+| icon | string | `"plus"` | The name of the icon shown when the control is closed/hidden.<br>Possible values:`"plus"`, `"plus-box"`, `"minus"`, `"minus-box"`, `"zoom-in"`, `"zoom-out"`, `"map"`, `"clock"`, `"list"`, `"list2"`, `"menu"`, `"layers"`, `"settings"` |
+| hideText | string | `"Hide Box"` | The title for the open/close-button when the control is minimized |
+| showText | string | `"Show Box"` | The title for the open/close-button when the control is maximized |
+| defaultMinimized | boolean | false | If true the control is closed/hidden on load |
+| onMinimize | function | null | Called when the control is minimized |
+| onMaximize | function | null | Called when the control is maximized |
 
 ### Methods and attributes
 #### userContainer
@@ -96,6 +40,10 @@ http://FCOO.github.io/leaflet-control-box/demo/
 #### maximize()
 	myLeafletControlBox.maximize()
 
+#### setDim( width, height )
+
+	myLeafletControlBox.setDim( 200, 30 );
+
 ## Copyright and License
 This plugin is licensed under the [MIT license](https://github.com/FCOO/leaflet-control-box/LICENSE).
 
@@ -103,17 +51,4 @@ Copyright (c) 2015 [FCOO](https://github.com/FCOO)
 
 ## Contact information
 
-Niels Holt nho@fcoo.dk
-
-
-## Credits and acknowledgements
-
-
-## Known bugs
-
-## Troubleshooting
-
-## Changelog
-
-
-
+[Niels Holt](http://github.com/NielsHolt)

@@ -477,3 +477,31 @@
 	background: #fff;
 	border: 1px solid #666;
 	}
+
+/***********************************************
+	leaflet-control-topcenter.scss, 
+
+	(c) 2016, FCOO
+
+	https://github.com/FCOO/leaflet-control-topcenter
+	https://github.com/FCOO
+
+
+************************************************/
+/* control positioning */
+.leaflet-center {
+  position: relative !important;
+  float: right;
+  right: 0;
+  left: -50%;
+  text-align: left; }
+  .leaflet-center .leaflet-control {
+    float: left;
+    left: 50%;
+    bottom: 0; }
+
+.leaflet-control-container .leaflet-control-bottomcenter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; }

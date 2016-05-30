@@ -47,10 +47,17 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
 
 		//Position
 		position: absolute;	
-		.leaflet-top &		{ top		: 0; }
-		.leaflet-bottom & { bottom: 0; }
+		.leaflet-top.leaflet-left		&	{	top		: 0; }
+		.leaflet-top.leaflet-center &	{	bottom: 0; }
+		.leaflet-top.leaflet-right	&	{	top		: 0; }
+
+		.leaflet-bottom.leaflet-left		&	{	bottom: 0; }
+		.leaflet-bottom.leaflet-center	&	{	top		: 0; }
+		.leaflet-bottom.leaflet-right		&	{	bottom: 0; }
+
 		.leaflet-left &		{ left	: 0; }
 		.leaflet-right &	{	right	: 0; }
+		.leaflet-center &	{	right	: 0; }
 
 		z-index						: 99999;
 
@@ -99,34 +106,48 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
 		}
 
 		a.leaflet-control-box-button {		
-			//Transformation
-			.leaflet-top.leaflet-left			&:before { @include transform(rotate(-45deg));	}
-			.leaflet-top.leaflet-right		&:before { @include transform(rotate(45deg));		}
-			.leaflet-bottom.leaflet-left	&:before { @include transform(rotate(-135deg));	}
-			.leaflet-bottom.leaflet-right &:before { @include transform(rotate(135deg));	}
-
 			height: 16px;
 			width	: 16px;
 			//font-size:rem(19px);
 			font-size:19px;
 			text-align: left;
-			
+
 			&:before {
 				position: relative;
 				color		: #999999;
 				content	: '\e80f'; 
 			}
+
+			//Transformation
+			.leaflet-top.leaflet-left				&:before { @include transform(rotate(-45deg));	}
+			.leaflet-top.leaflet-center			&:before { @include transform(rotate(-45deg));	}
+			.leaflet-top.leaflet-right			&:before { @include transform(rotate(45deg));		}
+
+			.leaflet-bottom.leaflet-left		&:before { @include transform(rotate(-135deg));	}
+			.leaflet-bottom.leaflet-center	&:before { @include transform(rotate(-135deg));	}
+			.leaflet-bottom.leaflet-right		&:before { @include transform(rotate(135deg));	}
+
 			//Adjusting position to align border with arrow
-			.leaflet-top &:before			{ top		:	-8px;	}
-			.leaflet-bottom &:before	{ bottom:	 4px;	}
+			.leaflet-top &:before										{ top: -8px;	}
+			.leaflet-top.leaflet-center &:before		{ top: -7px;	}
+
+			.leaflet-bottom &:before								{ bottom:  4px;	}
+			.leaflet-bottom.leaflet-center &:before	{ bottom:  7px;	}
+
+
 			.leaflet-left &:before		{ left	:	 1px;	}
 			.leaflet-right &:before		{	right	:	-5px;	}
+
+			/*.leaflet-top*/.leaflet-center &:before		{ left: 3px;	}
+
 
 			//Border
 			.leaflet-top.leaflet-left			& { border-bottom-right-radius: 3px;	}
 			.leaflet-top.leaflet-right		& { border-bottom-left-radius	: 3px;	}
+
 			.leaflet-bottom.leaflet-left	& { border-top-right-radius		: 3px;	}
 			.leaflet-bottom.leaflet-right & { border-top-left-radius		: 3px;	}
 		}
 	}
 }
+

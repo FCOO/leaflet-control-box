@@ -1,6 +1,6 @@
 {
   "name": "leaflet-control-box",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "homepage": "https://github.com/FCOO/leaflet-control-box",
   "authors": [
     "Niels Holt nho@fcoo.dk"
@@ -15,7 +15,8 @@
     "url": "git://github.com/FCOO/leaflet-control-box.git"
   },
   "dependencies": {
-    "leaflet": "latest"
+    "leaflet": "latest",
+    "leaflet-control-topcenter": "fcoo/leaflet-control-topcenter#^1.0.0"
   },
   "devDependencies": {
     "bourbon": "latest",

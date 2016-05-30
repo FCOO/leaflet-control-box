@@ -27,50 +27,65 @@
 	<script src="bower_components.js"></script>
 	<script src="../src/leaflet-control-box.js"></script>
 	<script>
-		var map = L.map('map').setView([56.2, 11.5], 9);
+		var map = L.map('map', {zoomControl: false }).setView([56.2, 11.5], 9);
 		var layer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution:'openstreetmap'}).addTo(map);
 
 
-		var testControl = new L.Control.Box({
+		new L.Control.Box({
 			toggleDisplay: true,
 			icon: 'settings',
 			width: 250,
 			height: 100,
 			defaultMinimized: false
-		})
-			.addTo(map);
+		}).addTo(map);
 	
-		var testControl2 = new L.Control.Box({
+		new L.Control.Box({
+			toggleDisplay: true,
+			position: 'topcenter',
+			width: 180,
+			height: 50,
+			icon: 'clock',
+			defaultMinimized: false
+		}).addTo(map);
+
+
+		new L.Control.Box({
 			toggleDisplay: true,
 			position: 'topright',
 			width: 180,
 			height: 120,
 			icon: 'clock',
-			defaultMinimized: true,
+			defaultMinimized: false,
 			onMaximize: function(){console.log('MAX clock'); }
-		})
-			.addTo(map);
+		}).addTo(map);
 
-		var testControl3 = new L.Control.Box({
+		new L.Control.Box({
 			toggleDisplay: true,
 			position: 'topleft',
 			icon: 'map', 
 			width: 200,
 			height: 200,
-			defaultMinimized: true
-		})
-			.addTo(map);
+			defaultMinimized: false
+		}).addTo(map);
 
 		
-		var testControl4 = new L.Control.Box({
+		new L.Control.Box({
+			toggleDisplay: true,
+			position: 'bottomcenter',
+			icon: 'layers',
+			width: 100,
+			height: 50,
+			defaultMinimized: false
+		}).addTo(map);
+
+		new L.Control.Box({
 			toggleDisplay: true,
 			position: 'bottomleft',
 			icon: 'layers',
 			width: 100,
 			height: 100,
-			defaultMinimized: true
-		})
-			.addTo(map);
+			defaultMinimized: false
+		}).addTo(map);
 
 	</script>
 </body>
