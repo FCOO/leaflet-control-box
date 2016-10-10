@@ -1,14 +1,14 @@
 {
   "name": "leaflet-control-box",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "homepage": "https://github.com/FCOO/leaflet-control-box",
   "authors": [
     "Niels Holt nho@fcoo.dk"
   ],
   "description": "",
   "main": [
-    "dist/leaflet-control-box.min.js",
-    "dist/leaflet-control-box.min.css"
+    "dist/leaflet-control-box.js",
+    "dist/leaflet-control-box.css"
   ],
   "repository": {
     "type": "git",
