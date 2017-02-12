@@ -1,6 +1,6 @@
 {
   "name": "fcoo-control-box",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "homepage": "https://github.com/FCOO/fcoo-control-box",
   "author": "Niels Holt nho@fcoo.dk",
   "description": "package.json is only use for building the package. see bower.json for more info",
