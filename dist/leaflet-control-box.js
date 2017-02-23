@@ -8,104 +8,132 @@
 
 ****************************************************************************/
 
-(function (L/*, window, document, undefined*/) {
+(function ($, L/*, window, document, undefined*/) {
     "use strict";
 
-L.Control.Box = L.Control.extend({
+//L.Control.Box = L.Control.extend({
+L.Control.Box = L.Control.FontAwesomeButton.extend({
     options: {
-        position: 'bottomright',
-        width: 150,
-        height: 150,
-        hideText: 'Hide Box',
-        showText: 'Show Box',
-        icon        : 'plus',
-        defaultMinimized: false,
+        position: 'topleft',
+
+        iconClassName     : '',
+        containerClassName: 'leaflet-control-box-container',
+        header            : '',    
+        
+        padding:  10    //button-margin
+
+                 + 2    //button-border
+                 + 2    //header-padding
+                 +16    //header-height
+                 + 2    //header-padding
+                 + 1    //header-bottom-border
+
+                 + 4    //content-padding
+
+                 + 4    //content-padding
+
+                 + 2    //button-border
+                 +10,   //button-margin
+
+        minimized : false,
         onMinimize: null,
         onMaximize: null,
     },
 
-
-    initialize: function (options) {
+        initialize: function (options) {
         L.Util.setOptions(this, options);
     },
 
+    /************************
+    onAdd
+    ************************/
     onAdd: function (map) {
-        this._map = map;
 
-        //Creating the container and stopping events from spilling through to the main map.
-        this._container = L.DomUtil.create('div', 'leaflet-control-box maximized');
-        this._container.style.width = this.options.width + 'px';
-        this._container.style.height = this.options.height + 'px';
-        L.DomEvent.disableClickPropagation(this._container);
+        L.Control.FontAwesomeButton.prototype.onAdd.call(this, map);
+
+        var $container = $(this._container);
         L.DomEvent.on(this._container, 'mousewheel', L.DomEvent.stopPropagation);
 
-        //Create the inner container
-        this.userContainer = L.DomUtil.create('div', 'leaflet-control-box-container', this._container);
+        var openButton = $container.find('a').addClass('open')[0];
+        L.DomEvent.on(openButton, 'click', this.maximize, this);
 
-        this._maximized = false;
+        //Header. Contains icon, span with text and close-icon 
+        var $mainHeader = $('<div/>')
+                            .addClass('leaflet-control-box-header')
+                            .appendTo( $container );
+        L.DomEvent.on($mainHeader[0], 'click', this.minimize, this);
 
-        this._button = L.DomUtil.create('a', 'leaflet-control-box-button icon-'+this.options.icon, this._container);
-        this._button.innerHTML = '';
-        this._button.href = '#';
-        this._button.title = this.options.hideText;
-        var stop = L.DomEvent.stopPropagation;
-        L.DomEvent
-            .on(this._button, 'click', stop)
-            .on(this._button, 'mousedown', stop)
-            .on(this._button, 'dblclick', stop)
-            .on(this._button, 'click', L.DomEvent.preventDefault)
-            .on(this._button, 'click', this._buttonClicked, this);
+        $('<i/>').addClass('fa '+ this.options.iconClassName).appendTo($mainHeader);
+
+        this.header = $('<span/>').appendTo( $mainHeader ).text( this.options.header );
+        
+        $('<i/>')
+            .addClass('fa fa-close') 
+            .appendTo( $mainHeader );
+
+        //Container for the contents
+        var $contentContainer = $('<div/>')
+                                    .addClass('leaflet-control-box-content-container')
+                                    .appendTo(this._container);
+        if (this.options.width)
+            $contentContainer.width(this.options.width);
+
+        if (this.options.height > 1)
+            $contentContainer.height(this.options.height);
+        else 
+            if (this.options.height <= 1){
+                //Create jquery-scroll-container inside the box
+            
+                //Since the control isn't attached to the DOM 
+                //we create the scroll-container in a temp-element on body 
+                //and move it from body to the control after
+
+                //Move $contentContainer to body
+                var $contentContainerParent = $contentContainer.parent(); 
+                $contentContainer
+                    .detach()
+                    .appendTo( $('body') );
+
+                //Create the scroll-container inside $contentContainer
+                var $newContentContainer = $contentContainer.scrollContainer({
+                    size      : this.options.height,
+                    padding   : this.options.padding,
+                    refElement: $(map.getContainer())
+                });
+            
+                //Move the scroll-container back into the control
+                $contentContainer
+                    .detach()
+                    .appendTo( $contentContainerParent );
+
+                //Use the new content-container
+                $contentContainer = $newContentContainer;
+            }
+
+        //Set the container as a DOM-element
+        this.contentContainer = $contentContainer[0];            
+
+        if (!this.options.minimized)
+            this.maximize();
 
         return this._container;
     },
 
-    addTo: function (map) {
-        L.Control.prototype.addTo.call(this, map);
-        if (this.options.defaultMinimized)
-          this.minimize();
-        else
-          this.maximize();
-        return this;
-    },
 
-    _buttonClicked: function () {
-        if (this._maximized)
-            this.minimize();
-        else
-            this.maximize();
-    },
-
-    setDim: function( width, height ){
-        this.options.width = width || this.options.width;
-        this.options.height = height || this.options.height;
-        if (this._maximized)
-            this.maximize();
-    },
     
     minimize: function () {
-        this._container.style.width = '19px';
-        this._container.style.height = '19px';
-        this._button.title = this.options.showText;
         L.DomUtil.removeClass( this._container, 'maximized');
-        this._maximized = false;
 
         if (this.options.onMinimize)
             this.options.onMinimize( this );
     },
 
     maximize: function () { 
-        this._container.style.width = this.options.width + 'px';
-        this._container.style.height = this.options.height + 'px';
-        this._button.title = this.options.hideText;
         L.DomUtil.addClass( this._container, 'maximized');
-        this._maximized = true;
-
         if (this.options.onMaximize)
             this.options.onMaximize( this );
     }
 });
 
-}(L, this, document));
 
-
-
+}(jQuery, L, this, document));
