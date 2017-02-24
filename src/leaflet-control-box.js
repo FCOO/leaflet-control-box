@@ -40,7 +40,10 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
         onMaximize: null,
     },
 
-        initialize: function (options) {
+    /************************
+    initialize
+    ************************/
+    initialize: function (options) {
         L.Util.setOptions(this, options);
     },
 
@@ -121,6 +124,9 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
 
 
     
+    /************************
+    minimize
+    ************************/
     minimize: function () {
         L.DomUtil.removeClass( this._container, 'maximized');
 
@@ -128,6 +134,9 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
             this.options.onMinimize( this );
     },
 
+    /************************
+    maximize
+    ************************/
     maximize: function () { 
         L.DomUtil.addClass( this._container, 'maximized');
         if (this.options.onMaximize)
