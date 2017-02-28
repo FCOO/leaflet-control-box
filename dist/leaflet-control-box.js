@@ -57,8 +57,8 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
         var $container = $(this._container);
         L.DomEvent.on(this._container, 'mousewheel', L.DomEvent.stopPropagation);
 
-        var openButton = $container.find('a').addClass('open')[0];
-        L.DomEvent.on(openButton, 'click', this.maximize, this);
+        this.$openButton = $container.find('a').addClass('open');
+        L.DomEvent.on(this.$openButton[0], 'click', this.maximize, this);
 
         //Header. Contains icon, span with text and close-icon 
         var $mainHeader = $('<div/>')
@@ -68,23 +68,25 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
 
         $('<i/>').addClass('fa '+ this.options.iconClassName).appendTo($mainHeader);
 
-        this.header = $('<span/>').appendTo( $mainHeader ).text( this.options.header );
+        this.$header = $('<span/>').appendTo( $mainHeader ).text( this.options.header );
+        $(this.$openButton).attr('title', this.options.header );
         
         $('<i/>')
             .addClass('fa fa-close') 
             .appendTo( $mainHeader );
 
         //Container for the contents
-        var $contentContainer = $('<div/>')
-                                    .addClass('leaflet-control-box-content-container')
-                                    .appendTo(this._container);
-        if (this.options.width)
-            $contentContainer.width(this.options.width);
+        var $contentContainer = 
+                $('<div/>')
+                    .addClass('leaflet-control-box-content-container')
+                    .appendTo(this._container);
 
         if (this.options.height > 1)
             $contentContainer.height(this.options.height);
         else 
             if (this.options.height <= 1){
+                $contentContainer.addClass('scroll-container');
+
                 //Create jquery-scroll-container inside the box
             
                 //Since the control isn't attached to the DOM 
@@ -112,6 +114,9 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
                 //Use the new content-container
                 $contentContainer = $newContentContainer;
             }
+
+        if (this.options.width)
+            $contentContainer.width(this.options.width);
 
         //Set the container as a DOM-element
         this.contentContainer = $contentContainer[0];            

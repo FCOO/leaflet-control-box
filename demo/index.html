@@ -14,7 +14,8 @@
     <link  href="../src/leaflet-control-box.css" rel="stylesheet">	
     <style>
         .test-content {
-            width: 100px;
+            box-sizing: border-box;
+            width: 100%;
             height: 20px;
             border: 1px solid black;
             background-color: #eee;
@@ -84,7 +85,8 @@
 			position: 'bottomleft',
 			header: 'SCROLL',
 			iconClassName: 'fa-list-ul',
-            Xpadding: 100,
+            padding: 100,
+            width: 180,
             height : 1
 
 		}).addTo(map);

@@ -18,11 +18,7 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
 .leaflet-right.leaflet-top { height: 100%; }
 
 .leaflet-control-box-container {
-position: relative;
-z-index: 100;
-
 	box-sizing    : border-box;
-
     background-color: white;
 
     //Hide the open-button when maximized
@@ -69,6 +65,9 @@ z-index: 100;
         box-sizing : border-box;
 
         padding: 4px;
+        &.scroll-container {
+            padding: 0;
+        }
     }
 } //end of .leaflet-control-box-container {
 
