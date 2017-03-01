@@ -1,41 +1,41 @@
 {
-    "name": "leaflet-control-box",
-    "version": "3.1.1",
-    "homepage": "https://github.com/FCOO/leaflet-control-box",
-    "authors": [
-        "Niels Holt nho@fcoo.dk"
-    ],
-    "description": "",
-    "main": [
-        "dist/leaflet-control-box.js",
-        "dist/leaflet-control-box.css"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/FCOO/leaflet-control-box.git"
-    },
-    "dependencies": {
-        "leaflet": "latest",
-        "leaflet-control-topcenter": "fcoo/leaflet-control-topcenter#^2.0.0",
-        "leaflet-control-fa-button": "fcoo/leaflet-control-fa-button#^2.1.2",
-        "font-awesome": "fontawesome#^4.7.0",
-        "jquery": "^3.1.1",
-        "jquery-scroll-container": "fcoo/jquery-scroll-container#^1.1.0"
-    },
-    "devDependencies": {
-        "bourbon": "latest",
-        "modernizr-mixin": "latest",
-        "mathsass": "latest"
-    },
-    "license": "MIT",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "moduleType": [
-        "es6"
-    ]
+  "name": "leaflet-control-box",
+  "version": "3.1.2",
+  "homepage": "https://github.com/FCOO/leaflet-control-box",
+  "authors": [
+    "Niels Holt nho@fcoo.dk"
+  ],
+  "description": "",
+  "main": [
+    "dist/leaflet-control-box.js",
+    "dist/leaflet-control-box.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FCOO/leaflet-control-box.git"
+  },
+  "dependencies": {
+    "leaflet": "latest",
+    "leaflet-control-topcenter": "fcoo/leaflet-control-topcenter#^2.0.0",
+    "leaflet-control-fa-button": "fcoo/leaflet-control-fa-button#^2.1.2",
+    "font-awesome": "fontawesome#^4.7.0",
+    "jquery": "^3.1.1",
+    "jquery-scroll-container": "fcoo/jquery-scroll-container#^1.1.0"
+  },
+  "devDependencies": {
+    "bourbon": "latest",
+    "modernizr-mixin": "latest",
+    "mathsass": "latest"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "moduleType": [
+    "es6"
+  ]
 }

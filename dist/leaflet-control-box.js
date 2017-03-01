@@ -21,16 +21,12 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
         header            : '',    
         
         padding:  10    //button-margin
-
                  + 2    //button-border
+
                  + 2    //header-padding
                  +16    //header-height
                  + 2    //header-padding
                  + 1    //header-bottom-border
-
-                 + 4    //content-padding
-
-                 + 4    //content-padding
 
                  + 2    //button-border
                  +10,   //button-margin
