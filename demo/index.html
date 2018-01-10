@@ -9,9 +9,9 @@
 	<meta name='copyright' content='FCOO'>
 	<meta name='owner' content='FCOO'>
 
-    <link  href="bower_components.css" rel="stylesheet">	
-    <link  href="css/font-awesome.css" rel="stylesheet">	
-    <link  href="../src/leaflet-control-box.css" rel="stylesheet">	
+    <link  href="bower_components.css" rel="stylesheet">
+    <link  href="css/font-awesome.css" rel="stylesheet">
+    <link  href="../src/leaflet-control-box.css" rel="stylesheet">
     <style>
         .test-content {
             box-sizing: border-box;
@@ -31,7 +31,7 @@
 	<script src="bower_components.js"></script>
 	<script src="../src/leaflet-control-box.js"></script>
 
-	
+
     <script>
 
         var map = L.map('map', {zoomControl: false }).setView([56.2, 11.5], 9);
@@ -39,7 +39,7 @@
 
 
 		new L.Control.Box({
-			position: 'topleft',
+			position: 'bottomleft',
 			header: 'fa-map-o',
 			iconClassName: 'fa-map-o',
 			width: 200,
@@ -64,7 +64,7 @@
 		}).addTo(map);
 
 
-        
+
         new L.Control.Box({
             position: 'bottomright',
             header: 'fa-home',
@@ -82,17 +82,17 @@
 		}).addTo(map);
 
 		var scrollBox = new L.Control.Box({
-			position: 'bottomleft',
-			header: 'SCROLL',
+			position: 'topleft',
+			header: 'SCROLL 50%',
 			iconClassName: 'fa-list-ul',
             width: 180,
-            height : 1
+            height : 0.5
 
 		}).addTo(map);
 
         for (var i=0; i<20; i++ )
             $('<div class="test-content">'+i+'</div>').appendTo( scrollBox.contentContainer );
-    
+
     </script>
 </body>
 </html>

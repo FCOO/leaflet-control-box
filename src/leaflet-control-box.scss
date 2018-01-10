@@ -8,8 +8,8 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
 
 
 ************************************************/
-//BOURBON - http://bourbon.io/
-@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+//BOURBON - http://bourbon.io/ version 5
+@import "../bower_components/bourbon/core/bourbon";
 
 
 //top-left an top-right leaflet control container get full height
@@ -21,16 +21,22 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
 	box-sizing    : border-box;
     background-color: white;
 
+    display       : flex;
+    flex-direction: column;
+
+
     //Hide the open-button when maximized
     &.maximized a.open  { display: none }
-    
+
     //The header
-    &.maximized .leaflet-control-box-header { 
-        display     : block; 
+    &.maximized .leaflet-control-box-header {
+        display     : block;
     }
 
     .leaflet-control-box-header {
         display: none;
+
+        flex: 0 0 auto;
 
         font-size    : 14px;
         font-family  : inherit;
@@ -44,11 +50,11 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
         cursor       : default;
 
         //Icon to the left
-        i:first-child { 
-            float: left; 
+        i:first-child {
+            float: left;
             margin-right: 4px;
         }
-        i:last-child { 
+        i:last-child {
             float: right;
             &:hover { color: red; }
         }
@@ -56,12 +62,13 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
     }
 
     //container for the content
-    &.maximized .leaflet-control-box-content-container { 
-        display: block; 
+    &.maximized .leaflet-control-box-content-container {
+        display: block;
+        flex   : 1 1 auto;
     }
 
     .leaflet-control-box-content-container {
-        display    : none;    
+        display    : none;
         box-sizing : border-box;
 
         padding: 4px;

@@ -26,8 +26,7 @@ http://FCOO.github.io/leaflet-control-box/demo/
 | :--: | :--: | :-----: | --- |
 | `position` | string | `"topleft"` | leaflet code for the position of the control.<br>Also supports `"topcenter"` and `"bottomcenter"` |
 | `width` | number | `0` | The width of the control. If `{width: 0}` the width of the control is given by the content added |
-| `height` | number  | | The height of the control.<br>`height = 0`: The height of the control is given by the content of the control<br>`height > 1`: The height is set to `options.height`<br>`height <= 1`: The maximum height of the control is the fraction of the height of the map. See [jquery-scroll-container](https://github.com/FCOO/jquery-scroll-container) for details   |
-| `padding` | number | `45` | **ONLY** when `options.height <= 1`. See code and [jquery-scroll-container](https://github.com/FCOO/jquery-scroll-container) for details |
+| `height` | number  | | The height of the control.<br>`height = 0`: The height of the control is given by the content of the control<br>`height > 1`: The height is set to `options.height`<br>`height <= 1`: The maximum height of the control is the fraction of the height of the map and the content is scrolling. **NOTE** Scrolling contents only available for `position:'"topLeft"'` or `position:"topRight"` |
 | `iconClassName` | string | `""` | The [Fontawesome](http://fontawesome.io/) class-name for the icon |
 | `minimized` | boolean | `false` | If true the control is minimized when created |
 | `onMinimize` | function | `null` | Called when the control is minimized |

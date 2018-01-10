@@ -15,13 +15,16 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
 
 .leaflet-control-box-container {
   box-sizing: border-box;
-  background-color: white; }
+  background-color: white;
+  display: flex;
+  flex-direction: column; }
   .leaflet-control-box-container.maximized a.open {
     display: none; }
   .leaflet-control-box-container.maximized .leaflet-control-box-header {
     display: block; }
   .leaflet-control-box-container .leaflet-control-box-header {
     display: none;
+    flex: 0 0 auto;
     font-size: 14px;
     font-family: inherit;
     font-weight: 500;
@@ -40,7 +43,8 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
       .leaflet-control-box-container .leaflet-control-box-header i:last-child:hover {
         color: red; }
   .leaflet-control-box-container.maximized .leaflet-control-box-content-container {
-    display: block; }
+    display: block;
+    flex: 1 1 auto; }
   .leaflet-control-box-container .leaflet-control-box-content-container {
     display: none;
     box-sizing: border-box;
