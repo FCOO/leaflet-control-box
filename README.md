@@ -39,6 +39,8 @@ http://FCOO.github.io/leaflet-control-box/demo/
 	myLeafletControlBox.minimize()
 #### maximize()
 	myLeafletControlBox.maximize()
+#### toggle()
+	myLeafletControlBox.toggle()
 
 ## Copyright and License
 This plugin is licensed under the [MIT license](https://github.com/FCOO/leaflet-control-box/LICENSE).
