@@ -256,6 +256,7 @@ COLOR AND OPACITY
 .leaflet-container .leaflet-tile-pane img,
 .leaflet-container img.leaflet-image-layer {
 	max-width: none !important;
+	max-height: none !important;
 	}
 
 .leaflet-container.leaflet-touch-zoom {
@@ -264,7 +265,10 @@ COLOR AND OPACITY
 	}
 .leaflet-container.leaflet-touch-drag {
 	-ms-touch-action: pinch-zoom;
-	}
+	/* Fallback for FF which doesn't support pinch-zoom */
+	touch-action: none;
+	touch-action: pinch-zoom;
+}
 .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
 	-ms-touch-action: none;
 	touch-action: none;
@@ -841,7 +845,7 @@ COLOR AND OPACITY
 	}
 
 /***********************************************
-    leaflet-control-fa-button.scss, 
+    leaflet-control-fa-button.scss,
 
     (c) 2017, FCOO
 
@@ -855,7 +859,7 @@ COLOR AND OPACITY
 
 .leaflet-control-fa-button a {
   font-size: 1.3333em;
-  cursor: pointer; }
+  cursor: default; }
   .leaflet-touch .leaflet-control-fa-button a {
     font-size: 1.5384230769em; }
 

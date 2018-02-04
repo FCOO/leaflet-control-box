@@ -24,6 +24,7 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
     display       : flex;
     flex-direction: column;
 
+    cursor: default;
 
     //Hide the open-button when maximized
     &.maximized a.open  { display: none }

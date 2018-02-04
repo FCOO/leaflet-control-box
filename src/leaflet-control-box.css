@@ -17,7 +17,8 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
   box-sizing: border-box;
   background-color: white;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  cursor: default; }
   .leaflet-control-box-container.maximized a.open {
     display: none; }
   .leaflet-control-box-container.maximized .leaflet-control-box-header {
