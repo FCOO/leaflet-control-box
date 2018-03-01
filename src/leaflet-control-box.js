@@ -41,6 +41,7 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
     ************************/
     initialize: function (options) {
         L.Util.setOptions(this, options);
+        this.minimized = !!this.options.minimized;
     },
 
     /************************

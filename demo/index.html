@@ -37,7 +37,7 @@
         var map = L.map('map', {zoomControl: false }).setView([56.2, 11.5], 9);
 		var layer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution:'openstreetmap'}).addTo(map);
 
-
+var test =
 		new L.Control.Box({
 			position: 'bottomleft',
 			header: 'fa-map-o',
@@ -93,6 +93,7 @@
         for (var i=0; i<20; i++ )
             $('<div class="test-content">'+i+'</div>').appendTo( scrollBox.contentContainer );
 
+test.toggle();
     </script>
 </body>
 </html>
