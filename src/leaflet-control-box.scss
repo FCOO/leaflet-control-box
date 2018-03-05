@@ -26,6 +26,12 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
 
     cursor: default;
 
+    //Hide when hide-when-minimized and minimized
+    &.hide-when-minimized:not(.maximized){
+        display: none;
+    }
+
+
     //Hide the open-button when maximized
     &.maximized a.open  { display: none }
 

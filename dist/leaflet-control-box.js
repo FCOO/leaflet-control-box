@@ -19,6 +19,7 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
         iconClassName     : '',
         containerClassName: 'leaflet-control-box-container',
         header            : '',
+        inclHeader        : true,
 
         padding:  10    //button-margin
                  + 2    //button-border
@@ -30,6 +31,7 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
 
                  + 2    //button-border
                  +10,   //button-margin
+
 
         minimized : true,
         onMinimize: null,
@@ -58,19 +60,22 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
         L.DomEvent.on(this.$openButton[0], 'click', this.maximize, this);
 
         //Header. Contains icon, span with text and close-icon
-        var $mainHeader = $('<div/>')
-                            .addClass('leaflet-control-box-header')
-                            .appendTo( $container );
-        L.DomEvent.on($mainHeader[0], 'click', this.minimize, this);
+        if (this.options.inclHeader){
 
-        $('<i/>').addClass('fa '+ this.options.iconClassName).appendTo($mainHeader);
+            var $mainHeader = $('<div/>')
+                                .addClass('leaflet-control-box-header')
+                                .appendTo( $container );
+            L.DomEvent.on($mainHeader[0], 'click', this.minimize, this);
 
-        this.$header = $('<span/>').appendTo( $mainHeader ).text( this.options.header );
-        this.$openButton.attr('title', this.options.header );
+            $('<i/>').addClass('fa '+ this.options.iconClassName).appendTo($mainHeader);
 
-        $('<i/>')
-            .addClass('fa fa-close')
-            .appendTo( $mainHeader );
+            this.$header = $('<span/>').appendTo( $mainHeader ).text( this.options.header );
+            this.$openButton.attr('title', this.options.header );
+
+            $('<i/>')
+                .addClass('fa fa-close')
+                .appendTo( $mainHeader );
+        }
 
         //Container for the contents
         var $contentContainer =

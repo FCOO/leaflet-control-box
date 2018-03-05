@@ -28,6 +28,7 @@ http://FCOO.github.io/leaflet-control-box/demo/
 | `width` | number | `0` | The width of the control. If `{width: 0}` the width of the control is given by the content added |
 | `height` | number  | | The height of the control.<br>`height = 0`: The height of the control is given by the content of the control<br>`height > 1`: The height is set to `options.height`<br>`height <= 1`: The maximum height of the control is the fraction of the height of the map and the content is scrolling. **NOTE** Scrolling contents only available for `position:'"topLeft"'` or `position:"topRight"` |
 | `iconClassName` | string | `""` | The [Fontawesome](http://fontawesome.io/) class-name for the icon |
+| `inclHeader` | boolean | `true` | If true a header is added |
 | `minimized` | boolean | `false` | If true the control is minimized when created |
 | `onMinimize` | function | `null` | Called when the control is minimized |
 | `onMaximize` | function | `null` | Called when the control is maximized |
