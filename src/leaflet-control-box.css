@@ -21,6 +21,8 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
   cursor: default; }
   .leaflet-control-box-container.hide-when-minimized:not(.maximized) {
     display: none; }
+  .leaflet-control-box-container.with-scroll.maximized {
+    height: 2000px; }
   .leaflet-control-box-container.maximized a.open {
     display: none; }
   .leaflet-control-box-container.maximized .leaflet-control-box-header {

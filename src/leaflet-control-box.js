@@ -89,6 +89,7 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
             if (this.options.height <= 1){
                 $contentContainer.addClass('scroll-container');
 
+                $container.addClass('with-scroll');
                 $container.css('max-height', 100*this.options.height + '%');
 
                 //Create jquery-scroll-container inside the box
