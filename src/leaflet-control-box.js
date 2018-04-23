@@ -54,6 +54,7 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
         L.Control.FontAwesomeButton.prototype.onAdd.call(this, map);
 
         var $container = $(this._container);
+
         L.DomEvent.on(this._container, 'mousewheel', L.DomEvent.stopPropagation);
 
         this.$openButton = $container.find('a').addClass('open');
@@ -89,7 +90,6 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
             if (this.options.height <= 1){
                 $contentContainer.addClass('scroll-container');
 
-                $container.addClass('with-scroll');
                 $container.css('max-height', 100*this.options.height + '%');
 
                 //Create jquery-scroll-container inside the box

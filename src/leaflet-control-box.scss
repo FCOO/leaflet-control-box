@@ -32,11 +32,6 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
     }
 
 
-    //IE11 bug fix: set value for height to make max-height work
-    &.with-scroll.maximized {
-        height: 2000px;
-    }
-
     //Hide the open-button when maximized
     &.maximized a.open  { display: none }
 
