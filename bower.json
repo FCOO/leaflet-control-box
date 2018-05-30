@@ -1,6 +1,6 @@
 {
   "name": "leaflet-control-box",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "homepage": "https://github.com/FCOO/leaflet-control-box",
   "authors": [
     "Niels Holt nho@fcoo.dk"
@@ -17,8 +17,7 @@
   "dependencies": {
     "leaflet": "latest",
     "leaflet-control-topcenter": "fcoo/leaflet-control-topcenter#^2.0.0",
-    "leaflet-control-fa-button": "fcoo/leaflet-control-fa-button#^2.1.2",
-    "font-awesome": "fontawesome#^4.7.0",
+    "leaflet-control-fa-button": "fcoo/leaflet-control-fa-button#^2.0.0",
     "jquery": "^3.1.1",
     "jquery-scroll-container": "fcoo/jquery-scroll-container#^3.0.0"
   },

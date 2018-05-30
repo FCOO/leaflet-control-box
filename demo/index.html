@@ -10,7 +10,7 @@
 	<meta name='owner' content='FCOO'>
 
     <link  href="bower_components.css" rel="stylesheet">
-    <link  href="css/font-awesome.css" rel="stylesheet">
+    <link  href="css/fontawesome-all.css" rel="stylesheet">
     <link  href="../src/leaflet-control-box.css" rel="stylesheet">
     <style>
         .test-content {
@@ -40,8 +40,8 @@
 var test =
 		new L.Control.Box({
 			position: 'bottomleft',
-			header: 'fa-map-o',
-			iconClassName: 'fa-map-o',
+			header: 'fa-map',
+			iconClassName: 'fa-map',
 			width: 200,
 			height: 200
 		}).addTo(map);
@@ -50,16 +50,16 @@ var test =
 			position: 'topcenter',
 			width: 180,
 			height: 50,
-			header: 'fa-floppy-o',
-			iconClassName: 'fa-floppy-o'
+			header: 'fa-save',
+			iconClassName: 'fa-save'
 		}).addTo(map);
 
         new L.Control.Box({
 			position: 'topright',
 			width: 180,
 			height: 0.4, //120,
-			header: 'fa-clock-o',
-			iconClassName: 'fa-clock-o',
+			header: 'fa-clock',
+			iconClassName: 'fa-clock',
 			onMaximize: function(){console.log('MAX clock'); }
 		}).addTo(map);
 
