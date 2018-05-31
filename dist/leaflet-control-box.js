@@ -74,7 +74,7 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
             this.$openButton.attr('title', this.options.header );
 
             $('<i/>')
-                .addClass('fa fa-close')
+                .addClass('fa fa-times')
                 .appendTo( $mainHeader );
         }
 
