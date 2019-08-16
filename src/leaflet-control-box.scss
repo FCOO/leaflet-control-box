@@ -77,11 +77,6 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
     .leaflet-control-box-content-container {
         display    : none;
         box-sizing : border-box;
-
-        padding: 4px;
-        &.scroll-container {
-            padding: 0;
-        }
     }
 } //end of .leaflet-control-box-container {
 

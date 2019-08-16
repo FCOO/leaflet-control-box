@@ -8,6 +8,8 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
 
 
 ************************************************/
+/* stylelint-disable order/properties-alphabetical-order */
+/* stylelint-enable */
 .leaflet-control-container,
 .leaflet-left.leaflet-top,
 .leaflet-right.leaflet-top {
@@ -50,7 +52,4 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
     flex: 1 1 auto; }
   .leaflet-control-box-container .leaflet-control-box-content-container {
     display: none;
-    box-sizing: border-box;
-    padding: 4px; }
-    .leaflet-control-box-container .leaflet-control-box-content-container.scroll-container {
-      padding: 0; }
+    box-sizing: border-box; }

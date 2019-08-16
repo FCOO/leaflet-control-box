@@ -88,33 +88,10 @@ L.Control.Box = L.Control.FontAwesomeButton.extend({
             $contentContainer.height(this.options.height);
         else
             if (this.options.height <= 1){
-                $contentContainer.addClass('scroll-container');
-
                 $container.css('max-height', 100*this.options.height + '%');
 
                 //Create jquery-scroll-container inside the box
-
-                //Since the control isn't attached to the DOM
-                //we create the scroll-container in a temp-element on body
-                //and move it from body to the control after
-
-                //Move $contentContainer to body
-                var $contentContainerParent = $contentContainer.parent();
-                $contentContainer
-                    .detach()
-                    .appendTo( $('body') );
-
-                //Create the scroll-container inside $contentContainer
-                var $newContentContainer = $contentContainer.addScrollbar({});
-
-
-                //Move the scroll-container back into the control
-                $contentContainer
-                    .detach()
-                    .appendTo( $contentContainerParent );
-
-                //Use the new content-container
-                $contentContainer = $newContentContainer;
+                $contentContainer = $contentContainer.addScrollbar();
             }
 
         if (this.options.width)

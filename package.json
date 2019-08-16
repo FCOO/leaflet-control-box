@@ -1,6 +1,6 @@
 {
   "name": "fcoo-control-box",
-  "version": "4.2.4",
+  "version": "4.2.5",
   "homepage": "https://github.com/FCOO/fcoo-control-box",
   "author": "Niels Holt nho@fcoo.dk",
   "description": "package.json is only use for building the package. see bower.json for more info",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "grunt": "^1.0.0",
-    "grunt-fcoo-grunt-plugin": "^4.0.0"
+    "grunt-fcoo-grunt-plugin": "^4.2.0"
   },
   "license": "MIT"
 }
