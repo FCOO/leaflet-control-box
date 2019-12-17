@@ -10,7 +10,6 @@ leaflet-control-box.scss, Create Leaflet Control in a box with optional icons an
 ************************************************/
 /* stylelint-disable order/properties-alphabetical-order */
 /* stylelint-enable */
-.leaflet-control-container,
 .leaflet-left.leaflet-top,
 .leaflet-right.leaflet-top {
   height: 100%; }
